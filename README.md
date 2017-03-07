@@ -33,7 +33,8 @@ python setup.py build_sphinx
 ## Usage
 Import the module:
 
-.. code-block:: python
+```python
 
-    import startrack
-    print(startrack.__version__)
+import startrack
+print(startrack.__version__)
+```
