@@ -23,6 +23,8 @@ python setup.py test
 ```
 
 ## Docs
+The code documentation is hosted on [Read the Docs](http://startrack.readthedocs.io/)
+
 Build the docs:
 ```bash
 

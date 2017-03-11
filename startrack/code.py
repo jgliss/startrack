@@ -6,6 +6,11 @@ from os.path import join, isfile, exists, dirname
 from warnings import warn
 __all__ = []
 
+def data_dir():
+    """Returns installation data directory"""
+    import startrack
+    return join(startrack.__dir__, "data")
+    
 def get_image_files(img_dir, file_type=None):
     """Load all image file paths into list
     

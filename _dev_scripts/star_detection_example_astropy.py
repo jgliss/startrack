@@ -1,3 +1,9 @@
+"""
+Old script from previous version of code
+
+Purpose: playing around with star detection algo from astropy
+"""
+
 import matplotlib.pyplot as plt
 from astropy.stats import sigma_clipped_stats
 #from astropy.visualization import SqrtStretch
@@ -8,24 +14,19 @@ import cv2
 
 from os.path import join
 
-import pystartrails as trails
+from startrack.code import data_dir
+import startrack.code_old as trails
 
 plt.close("all")
 do_clip_analysis = False
 
-base_dir = r'C:/TEMP_JGLISS/LRT/20161029_fagervann_startrail_tests/'
-mask_file = join(base_dir, 'mask_2-3.jpg')
-
-test_img = "LRT_01025.jpg"
+test_img = join(data_dir(), "test_img_stardetector.jpg")
 
 y0, y1 = 1000, 2000
 x0, x1 = 1500, 2500
 
 img = cv2.cvtColor(trails.get_image_data(test_img)[y0:y1, x0:x1, :],\
                                                             cv2.COLOR_BGR2GRAY)
-
-mask = np.uint8(trails.make_mask(mask_file, 10, 3))[y0:y1, x0:x1]
-
 fig, ax = plt.subplots(1,2, figsize=(16,8))
 ax[0].imshow(img, cmap = "gray")
 ax[1].imshow(img > 200)
@@ -35,7 +36,7 @@ ax[1].imshow(img > 200)
 mean, median, std = sigma_clipped_stats(img, sigma = 100.0)
 daofind = DAOStarFinder(fwhm = 2.0, threshold = std)
 
-data = (img - median) * mask
+data = img - median
 sources = daofind(data)
 positions = (sources['xcentroid'], sources['ycentroid'])
 apertures = CircularAperture(positions, r=4.)
