@@ -8,18 +8,22 @@ startrack
 
 The next generation of star trail imaging with Python (actually, the first generation! `Scheisse net nochma <https://www.youtube.com/watch?v=OpUAn-dgWTU>`__
 
-.. thumbnail::  _graphics/dummy.jpg
+.. thumbnail::  _graphics/dev01_out_1.png
   :width: 600px
   :title:
   
-  Last startrail image of the startrack test dataset (using a previous version of the code).
+  Test image showing result of automatic star detection algorithm (more will come!)
   
-Contents:
+Get the code `here <https://github.com/jgliss/startrack>`__.
+
+
+**Contents:**
 
 .. toctree::
    :maxdepth: 3
    
    instructions
+   idea
    api
 
 Indices and tables

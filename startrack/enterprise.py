@@ -1,37 +1,9 @@
-# -*- coding: utf-8 -*-
-
-import numpy as np
-from os import listdir, mkdir, getcwd
-from os.path import join, isfile, exists, dirname
+from os import mkdir
+from os.path import join, exists, dirname, basename
+from datetime import datetime
 from warnings import warn
-__all__ = []
-
-def data_dir():
-    """Returns installation data directory"""
-    import startrack
-    return join(startrack.__dir__, "data")
+#__all__ = []
     
-def get_image_files(img_dir, file_type=None):
-    """Load all image file paths into list
-    
-    Parameters
-    --------------
-    img_dir : str
-        image directory
-    file_type : :obj:`str`, optional
-        specify a certain file type
-    
-    Returns
-    ----------
-    list
-        list containing image file paths
-    """
-    if file_type is None:
-        return [join(img_dir, f) for f in listdir(img_dir) if isfile(join(img_dir, f))]
-    return [join(img_dir, f) for f in listdir(img_dir) if isfile(join(img_dir, f)) and 
-               f.endswith(file_type)]
-
-
 class TrailMaker(object):
     """Class for preparing a list of star trail images to create start trail time lapse
     

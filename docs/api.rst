@@ -1,15 +1,33 @@
-Docs
-####
+***
+API
+***
 
-.. note::
+Dive into the world of startrack. Scheisse, net nochma! Jetz raff ich gar nix mehr.
 
-  Did not manage to build docs on my local machine ...
+startrack Enterprise
+====================
+
+.. automodule:: startrack.enterprise
+  :members:
+  :undoc-members:
   
-.. automodule:: startrack
+Image module
+============
 
-Code module
------------
+.. automodule:: startrack.image
+  :members:
+  :undoc-members:
+    
+I/O
+===
 
-.. automodule:: startrack.code
+.. automodule:: startrack.io
+  :members:
+  :undoc-members:
+  
+Helper methods
+==============
+
+.. automodule:: startrack.helpers
   :members:
   :undoc-members:
