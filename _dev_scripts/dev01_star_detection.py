@@ -10,7 +10,9 @@ sources.
 
 from matplotlib.pyplot import close, show
 from astropy.stats import sigma_clipped_stats
+import numpy as np
 from photutils import DAOStarFinder, CircularAperture
+import cv2
 
 from os.path import join, basename
 from startrack.io import dummy_image
@@ -34,6 +36,17 @@ if __name__=="__main__":
     ax = img.show()
     
     gray = img.to_gray()
+    
+    corners =cv2. goodFeaturesToTrack(gray.data, 1000, 0.01, 10)
+    corners = np.int0(corners)
+    
+    img = cv2.cvtColor(gray.data, cv2.COLOR_GRAY2BGR)
+    for i in corners:
+        x,y = i.ravel()
+        cv2.circle(img,(x,y),3,255,-1)
+        
+    corner_img = Image(img)
+    corner_img.show()
     #hdu = datasets.load_star_image()
     mean, median, std = sigma_clipped_stats(gray.data)
     daofind = DAOStarFinder(fwhm=2.0, threshold=std)
