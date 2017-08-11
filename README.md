@@ -1,5 +1,5 @@
 # Startrack
-Python toolbox for startrail photograph
+Python toolbox for startrail photography
 
 Note: Very early stage!
 
