@@ -1,9 +1,9 @@
 # Startrack
-Python toolbox for rendering of star trail videos
+Python toolbox for startrail photograph
 
-No code yet!
+Note: Very early stage!
 
-Idea: algorithms for creation of startrail timeslapse videos from set of single exposures. It's going to be awesome! It's true!
+Idea: Image analysis toolbox for automised detection and tracking of stars in night-sky imagery timeseries. The purpose is to create startrail timelapse videos while maintaining the motion in the background scene. This is achieved by parameterising the history of each star-trail in the time series by combining image segmentation (for star detection in individual frames) and optical flow methods (to record the individual trajectories in time).
 
 ## Installation
 Install startrack:
